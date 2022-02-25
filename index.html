@@ -90,10 +90,25 @@
     function load() {
         var dT = getCookie("dark_theme");
         if (dT == true) {
-            darkmode();
+            darktheme = true;
+            document.cookie = "dark_theme=true; path=/;";
+            document.getElementById('dm').innerText = 'light_mode';
+            document.getElementById('setBar').style.backgroundColor = '#38ada9'
+            document.body.style.backgroundColor = '#222f3e'
+            document.body.style.color = '#c8d6e5';
+            document.getElementById('title').style.color = '#3ea948'
+            document.getElementById('title').style.textShadow = '5px 4px 0px #009432';
+            darktheme = true;
         }
         else {
-            lightmode();
+            darktheme = false;
+            document.cookie = "dark_theme=false; path=/;";
+            document.getElementById('dm').innerText = 'dark_mode';
+            document.getElementById('setBar').style.backgroundColor = '#5f27cd'
+            document.body.style.backgroundColor = '#c8d6e5'
+            document.body.style.color = '#2d3436';
+            document.getElementById('title').style.color = '#009432'
+            document.getElementById('title').style.textShadow = '5px 4px 0px #3ea948';
         }
     }
 
