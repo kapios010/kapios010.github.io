@@ -67,10 +67,14 @@
 <script>
     var darktheme = false;
 
+    console.log(getCookie('dark_theme'));
+
     if(getCookie('dark_theme') == true) darktheme = true;
+    console.log(darktheme);
 
     if(darktheme == true) darkmode();
     else lightmode();
+    console.log(darktheme);
 
     function darkmode() {
         console.log(darktheme)
