@@ -11,15 +11,21 @@
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <meta property="og:title" content="Kapios010's Website :D" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://kapios010.github.io" />
+    <meta property="og:description" content="Hi! This is a site describing my project, contact details and other stuff." />
+    <meta name="theme-color" content="#009432">
 </head>
 
-<body onload="load();">
+<body>
     <h1 id="title" class="unselectable">Hello, I'm Kapios.</h1>
     <div id="about-me" class="section">
         <h2>About Me</h2>
         <p>Hi! It's me, Kapios. I'm a programmer in C#, JavaScript and I sometimes make web pages. I'm making some games
             with Godot (but currently I have no active projects). I'm interested in learning Neural Networks with
-            ML.NET. I'm a pround member of an indie gamedev team <button class="knopf link"
+            ML.NET. I'm a proud member of an indie gamedev team <button class="knopf link"
                 onclick="redirect('https:\/\/www.youtube.com/channel/UCdsdNeNm_54OTBhWAdpLzDA');">
                 Projects & Snow
             </button>. I sometimes make stuff in Krita, nothing major for now.</p>
@@ -59,7 +65,12 @@
 </body>
 
 <script>
-    var darktheme;
+    var darktheme = false;
+
+    if(getCookie('dark_theme') == true) darktheme = true;
+
+    if(darktheme == true) darkmode();
+    else lightmode();
 
     function darkmode() {
         console.log(darktheme)
@@ -87,49 +98,25 @@
         document.getElementById('title').style.textShadow = '5px 4px 0px #3ea948';
     }
 
-    function load() {
-        var dT = getCookie("dark_theme");
-        if (dT == true) {
-            darktheme = true;
-            document.cookie = "dark_theme=true; path=/;";
-            document.getElementById('dm').innerText = 'light_mode';
-            document.getElementById('setBar').style.backgroundColor = '#38ada9'
-            document.body.style.backgroundColor = '#222f3e'
-            document.body.style.color = '#c8d6e5';
-            document.getElementById('title').style.color = '#3ea948'
-            document.getElementById('title').style.textShadow = '5px 4px 0px #009432';
-            darktheme = true;
-        }
-        else {
-            darktheme = false;
-            document.cookie = "dark_theme=false; path=/;";
-            document.getElementById('dm').innerText = 'dark_mode';
-            document.getElementById('setBar').style.backgroundColor = '#5f27cd'
-            document.body.style.backgroundColor = '#c8d6e5'
-            document.body.style.color = '#2d3436';
-            document.getElementById('title').style.color = '#009432'
-            document.getElementById('title').style.textShadow = '5px 4px 0px #3ea948';
-        }
-    }
-
-    function getCookie(name) {
-        name = name + '=';
-
-        const decodedCookie = decodeURIComponent(document.cookie);
-
-        const cookies = decodedCookie.split(';');
-
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.indexOf(name) == 0) {
-                return cookie.substring(name.length, cookie.length);
-            }
-        }
-    }
-
     function redirect(link) {
         window.location.href = link;
     }
+    
+    function getCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(';');
+				for(let i = 0; i <ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
 </script>
 
 </html>
