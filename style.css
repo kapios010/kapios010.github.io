@@ -102,8 +102,9 @@ iframe {
 }
 
 .knopf.discord {
-    --knopf-hue:160;
-    --knopf-saturation:88%;
+    --knopf-hue:126;
+    --knopf-saturation:46%;
+    --knopf-luminosity:45%;
 
 }
 
