@@ -66,8 +66,8 @@
 
 <script>
     var darktheme = true;
-
-    console.log(getCookie('dark_theme'));
+	document.addEventListener('load', {
+		    console.log(getCookie('dark_theme'));
 
     if(getCookie('dark_theme') == true) darktheme = true;
     console.log(darktheme);
@@ -75,6 +75,8 @@
     if(darktheme == true) darkmode();
     else darkmode();
     console.log(darktheme);
+	});
+
 
     function darkmode() {
         console.log(darktheme)
