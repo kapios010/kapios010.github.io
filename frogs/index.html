@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A page about frogs">
+    <meta name="keywords" content="Frogs, Amphibians, Nature">
+    <meta name="author" content="Your Name">
+    <title>Frogs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #def;
+        }
+        header {
+            background-color: #2d2;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All About Frogs</h1>
+    </header>
+    <main>
+        <h2>Introduction</h2>
+        <p>Frogs are a diverse and largely carnivorous group of short-bodied, tailless amphibians...</p>
+        <h2>Frog Habitats</h2>
+        <p>Frogs are found in many different environments around the world, including forests, swamps, deserts, and mountains.</p>
+
+        <h2>Frog Diet</h2>
+        <p>Frogs are carnivores, and they will eat a variety of smaller animals, including insects, worms, and even other frogs.</p>
+
+        <h2>Frog Lifespan</h2>
+        <p>The lifespan of a frog can vary greatly depending on the species. Some frogs live only a few years, while others can live up to 40 years.</p>
+        <h2>Frog Species</h2>
+        <p>There are over 5,000 species of frogs worldwide, each with its own unique characteristics and behaviors.</p>
+
+        <h2>Frog Conservation</h2>
+        <p>Many species of frogs are threatened by habitat loss, climate change, and disease. Conservation efforts are crucial to their survival.</p>
+
+        <h2>Interesting Frog Facts</h2>
+        <ul>
+            <li>Some frogs can jump up to 20 times their own body length in a single leap.</li>
+            <li>The smallest frog in the world is less than half an inch long.</li>
+            <li>Certain species of frogs can survive freezing temperatures by producing a type of "antifreeze" in their bodies.</li>
+        </ul>
+        <h2>Guess the Frog</h2>
+        <p>Click the button below to see a random frog fact!</p>
+        <button id="frogFactButton">Get a Frog Fact</button>
+        <p id="frogFact"></p>
+
+        <script>
+            const frogFacts = [
+                "Frogs absorb water through their skin so they don't need to drink.",
+                "Frogs can lay as many as 4,000 eggs in frogspawn.",
+                "The eyes and nose of a frog are on top of its head so it can breathe and see when most of its body is under the water.",
+                "Frogs have long back legs and webbed feet for jumping and swimming.",
+                "Certain frogs can jump up to 20 times their own body length in a single leap."
+            ];
+
+            document.getElementById('frogFactButton').addEventListener('click', function() {
+                const randomIndex = Math.floor(Math.random() * frogFacts.length);
+                document.getElementById('frogFact').textContent = frogFacts[randomIndex];
+            });
+        </script>
+    </main>
+    <script>
+
+        // Some JavaScript here
+        console.log('Welcome to the page about frogs!');
+    </script>
+</body>
+</html>
